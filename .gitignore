@@ -3,3 +3,4 @@ __pycache__/
 source pytes
 conftest.py
 .pytest_cachse
+.coverage
