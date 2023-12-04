@@ -1,2 +1,5 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
+source pytes
+conftest.py
+.pytest_cachse
