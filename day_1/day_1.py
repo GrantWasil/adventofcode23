@@ -29,7 +29,9 @@ def ensure_valid_num(num):
 
 def find_nums_in_line(line):
     print("Finding nums: ", line)
-    pattern = "(?=(\d|one|two|three|four|five|six|seven|eight|nine))"
+    pattern = (
+        "(?=(\d|one|two|three|four|five|six|seven|eight|nine))"  # noqa: W605
+    )
     digits = re.findall(pattern, line)
     return digits
 

@@ -1,10 +1,11 @@
 import pytest
+
 from day_1.day_1 import (
+    convert_to_values,
+    determine_digits,
     ensure_valid_num,
     find_nums_in_line,
-    determine_digits,
     validate_digits,
-    convert_to_values,
 )
 
 
