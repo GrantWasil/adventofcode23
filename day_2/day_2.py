@@ -51,24 +51,49 @@ def is_pull_valid(pull):
     return True
 
 
+def find_minimum_amount_of_cubes(game):
+    minimum_cubes = {"blue": 0, "red": 0, "green": 0}
+    for i in range(1, game["total"] + 1):
+        print("\t Checking Pull :", game[i])
+        for color in ["red", "blue", "green"]:
+            if game[i][color] > minimum_cubes[color]:
+                minimum_cubes[color] = game[i][color]
+    return minimum_cubes
+
+
+def get_product_of_cubes(cubes):
+    product = 1
+    for color in ["red", "blue", "green"]:
+        product *= cubes[color]
+    return product
+
+
 def is_game_possible(game):
-    print("\nValidating Game: ", game)
-    for i in range(1, game["total"]):
+    for i in range(1, game["total"] + 1):
+        print("\t Checking Pull :", game[i])
         if not is_pull_valid(game[i]):
+            print("Pull is not valid")
             return False
+    print("Entire game is valid")
     return True
 
 
 def main():
     print("Starting Script")
     running_sum = 0
+    running_product_sum = 0
     parsed_content = parse_input_file("input.txt")
     split_content = parsed_content.split("\n")
     for line in split_content:
         if len(line) > 0:
             game_data = format_input_data(line)
+            print("-- Current Running Sum: ", running_sum)
+            print("\n Accessing New Game: ", game_data)
             if is_game_possible(game_data):
                 running_sum += game_data["id"]
+            minimum_cubes = find_minimum_amount_of_cubes(game_data)
+            running_product_sum += get_product_of_cubes(minimum_cubes)
+            print("Current Product Sum: ", running_product_sum)
     print(running_sum)
 
 

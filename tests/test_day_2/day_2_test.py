@@ -69,49 +69,61 @@ class TestDay2:
         )
 
     def test_is_game_possible(self):
-        assert is_game_possible(
-            {
-                "id": 98,
-                "total": 5,
-                1: {"blue": 2, "red": 6, "green": 3},
-                2: {"blue": 1, "red": 8, "green": 1},
-                3: {"blue": 1, "red": 8, "green": 3},
-                4: {"blue": 2, "red": 0, "green": 0},
-                5: {"blue": 2, "red": 8, "green": 2},
-            }
+        assert (
+            is_game_possible(
+                {
+                    "id": 98,
+                    "total": 5,
+                    1: {"blue": 2, "red": 6, "green": 3},
+                    2: {"blue": 1, "red": 8, "green": 1},
+                    3: {"blue": 1, "red": 8, "green": 3},
+                    4: {"blue": 2, "red": 0, "green": 0},
+                    5: {"blue": 2, "red": 8, "green": 2},
+                }
+            )
+            == True
         )
-        assert is_game_possible(
-            {
-                "id": 74,
-                "total": 5,
-                1: {"blue": 3, "red": 7, "green": 0},
-                2: {"blue": 3, "red": 2, "green": 5},
-                3: {"blue": 3, "red": 5, "green": 1},
-                4: {"blue": 2, "red": 11, "green": 8},
-                5: {"blue": 3, "red": 10, "green": 8},
-            }
+        assert (
+            is_game_possible(
+                {
+                    "id": 74,
+                    "total": 5,
+                    1: {"blue": 3, "red": 7, "green": 0},
+                    2: {"blue": 3, "red": 2, "green": 5},
+                    3: {"blue": 3, "red": 5, "green": 1},
+                    4: {"blue": 2, "red": 11, "green": 8},
+                    5: {"blue": 3, "red": 10, "green": 8},
+                }
+            )
+            == True
         )
-        assert is_game_possible(
-            {
-                "id": 53,
-                "total": 6,
-                1: {"blue": 2, "red": 1, "green": 4},
-                2: {"blue": 8, "red": 4, "green": 7},
-                3: {"blue": 7, "red": 9, "green": 6},
-                4: {"blue": 1, "red": 3, "green": 7},
-                5: {"blue": 9, "red": 2, "green": 5},
-                6: {"blue": 10, "red": 7, "green": 1},
-            }
+        assert (
+            is_game_possible(
+                {
+                    "id": 53,
+                    "total": 6,
+                    1: {"blue": 2, "red": 1, "green": 4},
+                    2: {"blue": 8, "red": 4, "green": 7},
+                    3: {"blue": 7, "red": 14, "green": 6},
+                    4: {"blue": 1, "red": 3, "green": 7},
+                    5: {"blue": 9, "red": 2, "green": 5},
+                    6: {"blue": 10, "red": 7, "green": 1},
+                }
+            )
+            == False
         )
-        assert is_game_possible(
-            {
-                "id": 40,
-                "total": 6,
-                1: {"blue": 4, "red": 0, "green": 8},
-                2: {"blue": 5, "red": 7, "green": 8},
-                3: {"blue": 5, "red": 0, "green": 8},
-                4: {"blue": 12, "red": 3, "green": 6},
-                5: {"blue": 14, "red": 2, "green": 7},
-                6: {"blue": 5, "red": 7, "green": 1},
-            }
+        assert (
+            is_game_possible(
+                {
+                    "id": 40,
+                    "total": 6,
+                    1: {"blue": 4, "red": 0, "green": 8},
+                    2: {"blue": 5, "red": 7, "green": 8},
+                    3: {"blue": 5, "red": 0, "green": 8},
+                    4: {"blue": 21, "red": 3, "green": 6},
+                    5: {"blue": 14, "red": 2, "green": 7},
+                    6: {"blue": 5, "red": 7, "green": 1},
+                }
+            )
+            == False
         )
